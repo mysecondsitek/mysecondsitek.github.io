@@ -19,6 +19,10 @@
 :root {
     font-size: 10px;
 }
+html, body 
+{
+    overflow-x:hidden;
+    }
 
 // Color setting
 
@@ -90,23 +94,9 @@
 .colortext {
     color: #da2346;
 }
-
 .main {
     background: url(/img/fon.png) center no-repeat;
     background-size: cover;
-    &-square{
-        position: relative;
-        &:before {  
-            content: '';
-            position: absolute;
-            top: 17rem;
-            left: 37rem;
-            width: 60rem;
-            height: 24rem;
-            opacity: 0.1;
-            background-color: transparent;
-            border: 1px solid #fff;
-        }
     &-header {
         display: flex;
         align-items: center;
@@ -125,12 +115,11 @@
             }
         }
         &-text{
-            flex: 18;
-            text-align: center;
-            margin-top: 0.5rem;
-            margin-left: 7.1rem;
+            flex: 10;
+            display: flex;
+            justify-content: center;
             a {
-                margin-right: 8rem;
+                margin-right: 2rem;
                 color: #ffffff;
                 font-family: Sansation;
                 font-size: 2rem;
@@ -142,7 +131,6 @@
             }
         }
         &-social {
-            flex: 2;
             text-align: center;
             display: flex;
             margin-right: 4rem;
@@ -210,20 +198,11 @@
         }
     }
 }
-}
 
 // About section
 
 .about {
     position: relative;
-    &-line {
-        width: 5%;
-        height: 3px;
-        background-color: #000;
-        position: absolute;
-        top: 8.7rem;
-        right: 74rem;
-    }
     position: block;
     display: flex;
     justify-content: space-around;
@@ -247,12 +226,12 @@
         }
         p {
             color: #000000;
-            font-family: "Myriad Pro";
+            font-family: Myriad Pro;
             font-size: 1.6rem;
             line-height: rem;
         }
         hr {
-            margin-left: 0;
+            margin-left: 0rem;
             background-color: #000;
             width: 35%;
         }
@@ -264,8 +243,6 @@
         }
     }
 // Our section
-
-
 .our {
     &-line {
         width: 30%;
@@ -303,8 +280,6 @@
         } 
     }   
 }
-
-
 // Web section
 
 .web {
@@ -412,7 +387,6 @@
     &-one {
         text-align: center;
         margin-top: 6.8rem;
-        margin-right: 5rem;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -563,7 +537,7 @@
     display: flex;
     &-oneblock {
         margin-top: 1rem;
-        margin-left: 2rem;
+        margin-left: 1rem;
         text-align: left;
         h2 {
             margin-top: 2.6rem;
@@ -591,7 +565,7 @@
             margin-left: 10rem;
             display: flex;
             input {
-                padding: 1rem 2.3rem;
+                padding: 1rem 0.5rem;
                 border: 1px solid lighten(#097e89, 50%);
                 background-color: #097e89;
                 color: lighten(#097e89, 70%);
@@ -613,9 +587,6 @@
                 }
 
                 
-            }
-            &-2 {
-
             }
             &-3 {
                 input{
@@ -648,13 +619,13 @@
     border-radius: 2.5rem;
     background: #2e2e2e;
   }
+// contacts section
 .contacts {
     display: flex;
     background-color: #474747;
     &-block{
     display: flex;
-    margin-top: 3.1rem;
-    margin-left: 3.1rem;
+    margin-left: 1rem;
     hr {
         background-color: #fff;
         width: 10rem;
@@ -682,6 +653,7 @@
         text-decoration: none;
         }
     &-product {
+        margin-top: 3.1rem;
         hr {
             background-color: #fff;
             width: 10rem;
@@ -691,11 +663,14 @@
         margin-right: 4rem;
     }
     &-learn {
+        margin-top: 3.1rem;
         margin-right: 4rem;
+    }   
+    &-company {
+        margin-top: 3.1rem;
     }
-    }
+}
     &-two { 
-        margin-top: 4.2rem;
         flex: 3;
         &-block{
             display: flex;
@@ -763,7 +738,439 @@
     }
 }
 
-@media (max-width: 500 px)
+@media (max-width: 991px)
 {
+// Main section
+    .main {
+        &-header {
+            flex-direction: column;
+            &-text {
+                margin-left: 1.4rem;
+                display: flex;
+                justify-content: center;
+                a {
+                    font-size: 1.7rem;
+                    margin-right: 1.4rem;
+                }
+            }
+            &-social {
+                margin-left: 6rem;
+                margin-bottom: 1rem;
+            }
+        }
+        &-content {
+            h1 {
+                font-size: 4.5rem;
+            }
+        }
+    }
+// About section
+.about {
+    display: flex;
+    flex-direction: column;
 
+    h1 {
+        font-size: 3rem; 
+     }
+     p {
+         font-size: 1.6rem;
+     }
+    &-img {
+        order: 2;
+        img {
+            width: 0%;
+        }
+    }
+    &-text {
+        order: 1;
+        margin-bottom: 3rem;
+    }
 }
+// Web section
+.web {
+    &-content {
+        flex-direction: column;
+    }
+}
+
+//Fcontent section
+
+.fcontent {
+    flex-direction: column;
+    justify-content: center;
+    &-one {
+        order: 2;
+        margin-bottom: 0;
+        margin-top: 1rem;
+        &-pages{
+            margin-bottom: 1rem;
+            }
+    }
+    &-two {
+        margin-top: 0;
+        order: 1;
+        img {
+            width: 100%;
+        }
+    }
+}
+//Brands section
+.brands {
+    &-1 {
+        padding: 1rem;
+        img {
+            margin-right: 1rem;
+            width: 90%;
+        }
+    }
+    &-2 {
+        padding: 1rem;
+        img {
+            margin-right: 1rem;
+            width: 90%;
+        }
+        &-1 {
+            margin-top: 3rem;
+            img{
+                width: 90%;
+            }
+        }
+        &-2 {
+            margin-top: 3.5rem;
+            img{
+                width: 70%;
+            }
+        }
+        &-3 {
+            margin-top: 2rem;
+            img{
+                width: 70%;
+            }
+        }
+        &-4 {
+            margin-top: 2rem;
+            img{
+                width: 62%;
+            }
+        }
+    }
+}
+// Section Queries
+.queries {
+    flex-direction: column;
+    &-oneblock {
+        h2 {
+            margin-top: 2rem;
+        }
+        p {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+    &-secondblock {
+        &-form {
+            margin-top: 1rem;
+            margin-left: 1rem;
+            display: flex;  
+        }
+        margin-bottom: 2rem;
+        }
+    }
+
+
+// Contacts section
+
+.contacts {
+    flex-direction: column;
+    &-block{
+    h3 {
+        font-size: 2rem;
+    }
+    a {
+        font-size: 1.4rem;
+    }
+    margin-left: 1.5rem;
+    hr {
+        width: 10rem;
+        margin-right: 7rem;
+    }
+    &-product {
+        hr {
+            width: 10rem;
+            margin-right: 7rem;
+            
+        }
+        margin-right: 1rem;
+    }
+    &-learn {
+        margin-right: 1rem;
+    }
+    }
+    &-two { 
+        margin-top: 4.2rem;
+        flex: 3;
+        &-block{
+            margin-bottom: 2rem;
+            margin-top: 3rem;
+        } 
+        &-social {
+            margin-bottom: 2rem;
+        }
+    }
+}
+}
+
+@media (max-width: 501px){
+// Main section
+    #circle {
+        width: 5rem;
+        height: 5rem;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 5rem;
+        border: 1px solid #fff;
+        background: transparent;
+        opacity: 0.8;
+      }
+    .main {
+        &-header {
+            &-logo {
+                p{
+                    font-size: 5rem;
+                }
+                text-align: center;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            flex-direction: column;
+            &-text {
+                margin-top: 1rem;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-left: 0;
+                margin-right: 0;
+                a {
+                    margin-bottom: 1rem;
+                    font-size: 2.5rem;
+                    margin-right: 1.4rem;
+                }
+            }
+            &-social {
+                margin-left: 3rem;
+                margin-bottom: 1rem;
+                i{
+                    font-size: 3rem;
+                    margin-top: 1rem;
+                    opacity: 0.8;
+                }
+            }
+        }
+        &-content {
+            h1 {
+                font-size: 4.6rem;
+            }
+            p {
+                font-size: 2rem;
+            }
+        }
+    }
+    .fa-google-plus-g {
+        margin-left: 0.4rem;
+    }
+// About section
+.about {
+    text-align: center;
+    h1 {
+        font-size: 2.4rem; 
+     }
+     p {
+         font-size: 1.7rem;
+         text-align: center;
+     }
+     button {
+         margin-top: 3rem;
+     }
+     hr{
+         width: 100%;
+     }
+    &-img {
+        order: 2;
+        img {
+            width: 0%;
+        }
+    }
+    &-text {
+        margin-left: 2rem;
+        margin-top: 3rem;
+        margin-right: 3rem;
+        order: 1;
+        margin-bottom: 3rem;
+    }
+}
+// Our section
+.our {
+    padding: 3rem 0;
+    h1 {
+        top:-1rem;
+        font-size: 3rem;
+        background-color: transparent;
+    }
+    &-h1{
+    &:before{
+        width: 0%;
+    }
+    }
+    &-line {
+        width: 0;
+        }
+    }
+// Feedback section
+    .feedback {
+        &-line {
+            width: 0%;
+        }
+        padding: 3rem 0;
+        &-hr {
+        &:before{
+            width: 0%;
+        }
+            h1 {
+                top: -1rem;
+                padding: 0 2rem;
+                position: absolute;
+                background-color: transparent;
+            } 
+        }   
+    }
+// Clients section
+
+.clients {
+    &-line {
+        width: 0%;
+    }
+    padding: 5rem 0;
+    &-text {
+    &:before{
+        width: 0%;
+    }
+        h1 {
+            top: -1.5rem;
+            background-color: transparent;
+        } 
+    }   
+}
+// Section Queries
+.queries {
+    flex-direction: column;
+    &-oneblock {
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
+        p {
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+    &-secondblock {
+        margin-right: 1rem;
+        input {
+            margin-left: 0;
+            text-align-last: left;
+            width: 100%;
+        }
+        &-form {
+            margin-top: 1rem;
+            margin-left: 1rem;
+            display: flex;
+            ::placeholder {
+                opacity: 0.7;
+                color: #ffffff;
+                font-family: Sansation;
+                font-size: 0.9rem;
+                line-height: 2.2rem;
+                text-align: left;
+            }
+            &-1 {
+                input {
+                    padding: 1rem 0.5rem;
+                    border-right: none;
+                    
+                }
+            &-2 {
+                padding: 0.75rem 0.5rem;
+            }
+            }
+            &-3 {
+                input{
+                    padding: 0.75rem 0.5rem;
+                    color: #097e89;
+                    line-height: 2.2rem;
+                    font-size: 1.2rem;
+                    &:focus {
+                        outline: none;
+                    }
+                    &:active {
+                       background-color: darken(#fff, 5%);
+                    }
+                }
+            } 
+        }
+        margin-bottom: 2rem;
+        }
+    }
+// Contacts section
+
+.contacts {
+    &-line {
+        margin: auto;
+        height: 1px;
+        width: 15rem;
+        background-color: #fff;
+        margin-bottom: 1rem;
+    }
+    hr {
+        width: 0%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    flex-direction: column;
+    &-block{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap; 
+    h3 {
+        font-size: 2rem;
+    }
+    a {
+        font-size: 1.4rem;
+    }
+    
+    &-product {
+        margin-right: 1rem;
+    }
+    &-learn {
+        margin-right: 1rem;
+    }
+    }
+    &-two { 
+        margin-top: 4.2rem;
+        flex: 3;
+        &-block{
+            margin-bottom: 2rem;
+            margin-top: 3rem;
+        } 
+        &-social {
+            margin: auto;
+            margin-bottom: 2rem;
+        }
+    }
+}
+}
+
+
+
